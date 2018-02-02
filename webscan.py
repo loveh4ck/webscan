@@ -62,7 +62,7 @@ def http_banner(url):
 			else:
 				title = ''
 			lock.acquire()
-			print('%s\t%d\t%-10s\t%s' % (ip.lstrip('http://'), Struts, Server, title))
+			#print('%s\t%d\t%-10s\t%s' % (ip.lstrip('http://'), Struts, Server, title))
 			f=file("result.txt", "a+")
 			f.write('%s\t%d\t%-10s\t%s' % (ip.lstrip('http://'), Struts, Server, title)+"\n")
 			f.close()
@@ -80,7 +80,7 @@ if __name__ == '__main__':
 			startlong = ip2int(start)
 			endlong = ip2int(end)
 			ips = netaddr.IPRange(start, end)
-			print ips
+			#print ips
 			for ip in list(ips):
 				url = 'http://%s:%s' % (ip, port)
 				print url
